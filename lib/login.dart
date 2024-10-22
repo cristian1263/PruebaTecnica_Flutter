@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:prueba_tecnica/BD.dart';
 import 'package:prueba_tecnica/RegExi.dart';
 import 'package:prueba_tecnica/main.dart';
 import 'registro.dart';
@@ -221,6 +222,7 @@ class _VisLoginState extends State<VisLogin> {
                               margin: const EdgeInsets.only(top: 3.0),
                               child: ElevatedButton(
                                 onPressed: () {
+                                  IniciarSesion();
                                   Navigator.pushNamed(context, '/RegExi');
                                 },
                                 style: ElevatedButton.styleFrom(
@@ -429,6 +431,19 @@ class _VisLoginState extends State<VisLogin> {
                             ),
                           ]))))
             ])));
+  }
+
+  void IniciarSesion() async {
+    String usuario = cntpersona.text;
+    String pass = cntContra.text;
+
+    if (usuario.isEmpty || pass.isEmpty) {
+      // Mostrar un mensaje al usuario si falta información
+      print("Por favor, ingresa tu nombre/correo y contraseña.");
+      return; // Salir del método si hay campos vacíos
+    } else {
+      int recibido = await BaseDatos.IniciarSesion(usuario, pass);
+    }
   }
 
   Widget buildPersona(String label, TextEditingController controller,

@@ -26,12 +26,6 @@ class MyApp extends StatelessWidget {
         '/Login': (context) => const VisLogin(),
         '/Registro': (context) => const Registro(),
         '/RegExi': (context) => const VisRegExi(),
-        // '/EditarProyecto': (context) => const EditarProyecto(),
-        // '/RegisterProyecto': (context) => const RegistrarProyecto(),
-        // '/ListaTareas': (context) => const ListadoTareas(),
-        // '/EditarTarea': (context) => const EditarTarea(),
-        // '/RegistrarTarea': (context) => const RegistrarTarea(),
-        // '/Ayuda': (context) => const Ayuda()
       },
     );
   }
