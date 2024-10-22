@@ -293,7 +293,7 @@ class _RegistroState extends State<Registro> {
 
   void RegistrarUsuario() async {
     String Nombre = cntNombre.text;
-    String Ident = cntIdent.text;
+    int Ident = int.parse(cntIdent.text);
     String Email = cntEmail.text;
     String Contra = cntContra.text;
     int resultado = await BaseDatos.RegUser(Nombre, Ident, Email, Contra);

@@ -3,13 +3,14 @@ import 'package:sqflite/sqflite.dart';
 class BaseDatos {
   static Future<void> crearTabla(Database db) async {
     await db.execute("""
-CREATE TABLE usuarios
-id INTEGER PRIMARY KEY AUTOINCREMENT,
-Nombre TEXT,
-Identificacion TEXT,
-Email TEXT,
-Password  TEXT
-""");
+    CREATE TABLE usuarios (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      Nombre TEXT,
+      Identificacion INTEGER,
+      Email TEXT,
+      Password TEXT
+    )
+  """);
   }
 
   static Future<Database> db() async {
@@ -20,16 +21,16 @@ Password  TEXT
   }
 
   static Future<int> RegUser(
-      String Nombre, String Id, String Email, String Password) async {
+      String nombre, int id, String email, String password) async {
     final con = await db();
     final datos = {
-      "Nombre": Nombre,
-      "Identificacion": Id,
-      "Email": Email,
-      "Password": Password
+      "Nombre": nombre,
+      "Identificacion": id,
+      "Email": email,
+      "Password": password
     };
-    final id = await con.insert("usuarios", datos);
-    return id;
+    final idInsertado = await con.insert("usuarios", datos);
+    return idInsertado;
   }
 
   static Future<int> IniciarSesion(String usuario, String password) async {
