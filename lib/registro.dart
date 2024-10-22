@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'login.dart';
+import 'BD.dart';
 
 class Registro extends StatefulWidget {
   const Registro({super.key});
@@ -219,7 +220,10 @@ class _RegistroState extends State<Registro> {
                             margin: const EdgeInsets.only(top: 3.0),
                             child: ElevatedButton(
                               onPressed: () {
-                                Navigator.pushNamed(context, '');
+                                if (validarCampos()) {
+                                  RegistrarUsuario();
+                                  Navigator.pushNamed(context, '/RegExi');
+                                }
                               },
                               style: ElevatedButton.styleFrom(
                                 backgroundColor:
@@ -278,6 +282,21 @@ class _RegistroState extends State<Registro> {
         ),
       ),
     );
+  }
+
+  bool validarCampos() {
+    return cntNombre.text.isNotEmpty &&
+        cntIdent.text.isNotEmpty &&
+        cntEmail.text.isNotEmpty &&
+        cntContra.text.isNotEmpty;
+  }
+
+  void RegistrarUsuario() async {
+    String Nombre = cntNombre.text;
+    int Ident = int.parse(cntIdent.text);
+    String Email = cntEmail.text;
+    String Contra = cntContra.text;
+    int resultado = await BaseDatos.RegUser(Nombre, Ident, Email, Contra);
   }
 
   Widget buildNombre(String label, TextEditingController controller,

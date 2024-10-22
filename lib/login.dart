@@ -1,6 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'main.dart';
+import 'package:prueba_tecnica/RegExi.dart';
+import 'package:prueba_tecnica/main.dart';
+import 'registro.dart';
 
 class VisLogin extends StatefulWidget {
   const VisLogin({super.key});
@@ -21,9 +23,23 @@ class _VisLoginState extends State<VisLogin> {
         home: Scaffold(
             backgroundColor: Colors.white,
             body: Stack(children: [
+              Positioned(
+                top: -300, // Ajusta la posición
+                right: -100,
+                child: Container(
+                  height: 600, // Ajusta la posición
+                  width: 600,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/img/opacity.png'),
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
+              ),
               SingleChildScrollView(
                   physics:
-                      BouncingScrollPhysics(), // Para un mejor desplazamiento
+                      const BouncingScrollPhysics(), // Para un mejor desplazamiento
                   child: Padding(
                       padding: const EdgeInsets.symmetric(
                           horizontal: 20, vertical: 40),
@@ -205,7 +221,7 @@ class _VisLoginState extends State<VisLogin> {
                               margin: const EdgeInsets.only(top: 3.0),
                               child: ElevatedButton(
                                 onPressed: () {
-                                  Navigator.pushNamed(context, '');
+                                  Navigator.pushNamed(context, '/RegExi');
                                 },
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor:
@@ -218,7 +234,7 @@ class _VisLoginState extends State<VisLogin> {
                                 child: const Text(
                                   'Iniciar sesión',
                                   style: TextStyle(
-                                    fontWeight: FontWeight.normal,
+                                    fontWeight: FontWeight.bold,
                                     color: Colors.white,
                                     fontFamily: 'Inter',
                                     fontSize: 16,
@@ -296,7 +312,7 @@ class _VisLoginState extends State<VisLogin> {
                               //margin: const EdgeInsets.only(top: 10.0),
                               child: ElevatedButton(
                                 onPressed: () {
-                                  Navigator.pushNamed(context, '');
+                                  Navigator.pushNamed(context, '/RegExi');
                                 },
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: Colors.white,
@@ -344,7 +360,7 @@ class _VisLoginState extends State<VisLogin> {
                               //margin: const EdgeInsets.only(top: 10.0),
                               child: ElevatedButton(
                                 onPressed: () {
-                                  Navigator.pushNamed(context, '');
+                                  Navigator.pushNamed(context, '/RegExi');
                                 },
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: Colors.white,
@@ -404,7 +420,7 @@ class _VisLoginState extends State<VisLogin> {
                                           context,
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  const VisLogin()),
+                                                  const Registro()),
                                         );
                                       },
                                   ),

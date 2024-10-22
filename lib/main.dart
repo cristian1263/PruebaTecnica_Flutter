@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'principal.dart';
 import 'login.dart';
 import 'registro.dart';
+import 'RegExi.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => const VisPrincipal(),
         '/Login': (context) => const VisLogin(),
         '/Registro': (context) => const Registro(),
-        // '/ListaProyecto': (context) => const ListadoProyecto(),
+        '/RegExi': (context) => const VisRegExi(),
         // '/EditarProyecto': (context) => const EditarProyecto(),
         // '/RegisterProyecto': (context) => const RegistrarProyecto(),
         // '/ListaTareas': (context) => const ListadoTareas(),
