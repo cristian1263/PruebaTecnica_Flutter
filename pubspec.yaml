@@ -60,7 +60,8 @@ flutter:
 
   assets:
     - assets/img/Rectangle3.png
-    - assets/img/opacity.png
+    - assets/img/Logo.png
+    - assets/img/Logo2.png
     - assets/img/spinner-two.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -96,6 +97,10 @@ flutter:
       fonts:
         - asset: assets/fonts/Product Sans Regular.ttf
         - asset: assets/fonts/Product Sans Bold.ttf
+
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-VariableFont_opsz,wght.ttf
 
   #
   # For details regarding fonts from package dependencies,

@@ -181,33 +181,37 @@ class _RegistroState extends State<Registro> {
                             height: 10,
                           ),
                           //Inicio de Validacion de politicas
-                          Row(
-                            children: [
-                              //Checkbox de politicas
-                              Container(
-                                  child: Checkbox(
-                                checkColor: Color.fromARGB(255, 208, 213, 221),
-                                activeColor: Color.fromARGB(255, 84, 40, 241),
-                                value: isChecked,
-                                onChanged: (bool? value) {
-                                  setState(() {
-                                    isChecked = value!;
-                                  });
-                                },
-                              )),
+                          Center(
+                            child: Row(
+                              children: [
+                                //Checkbox de politicas
+                                Container(
+                                    child: Checkbox(
+                                  checkColor:
+                                      Color.fromARGB(255, 208, 213, 221),
+                                  activeColor: Color.fromARGB(255, 84, 40, 241),
+                                  value: isChecked,
+                                  side: BorderSide(width: 1),
+                                  onChanged: (bool? value) {
+                                    setState(() {
+                                      isChecked = value!;
+                                    });
+                                  },
+                                )),
 
-                              // Textro de Politicas de privacidad
-                              Container(
-                                  width: 305,
-                                  child: const Text(
-                                    'Acepto los Términos y Condiciones y la Política de privacidad de Banca créditos ',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontFamily: 'Product Sans Bold',
-                                      fontSize: 14,
-                                    ),
-                                  )),
-                            ],
+                                // Textro de Politicas de privacidad
+                                Container(
+                                    width: 305,
+                                    child: const Text(
+                                      'Acepto los Términos y Condiciones y la Política de privacidad de Banca créditos ',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontFamily: 'Product Sans Bold',
+                                        fontSize: 14,
+                                      ),
+                                    )),
+                              ],
+                            ),
                           ),
                           Container(height: 10),
                           //Boton para continuar
@@ -237,17 +241,6 @@ class _RegistroState extends State<Registro> {
                             ),
                           ),
                           Container(height: 20),
-                          // TextButton(
-                          //   onPressed: () {
-                          //     // Aquí navegas a la pantalla de inicio de sesión
-                          //     Navigator.push(
-                          //       context,
-                          //       MaterialPageRoute(
-                          //           builder: (context) => const VisLogin()),
-                          //     );
-                          //   },
-                          //   child: Text("¿Ya tienes una cuenta? Inicia sesión"),
-                          // ),
                           RichText(
                             text: TextSpan(
                               text:
