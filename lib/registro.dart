@@ -25,259 +25,262 @@ class _RegistroState extends State<Registro> {
         backgroundColor: Colors.white,
         body: Stack(
           children: [
-            Positioned(
-              top: 130,
-              right: 97,
-              child: Column(children: []),
-            ),
-            Positioned(
-                top: 50,
-                left: 27,
-                child: Form(
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Row(
-                          mainAxisSize: MainAxisSize.min,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            //Logo
-                            Container(
-                              height: 45,
-                              width: 80,
-                              decoration: const BoxDecoration(
-                                image: DecorationImage(
-                                  image:
-                                      AssetImage('assets/img/spinner-two.png'),
-                                ),
-                              ),
-                            ),
-                            //Nombre de la empresa
-                            Container(
-                                child: const Text(
-                              'Banca créditos',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: 'ProductSans',
-                                fontSize: 28,
-                              ),
-                            )),
-                          ],
-                          //Fin de la fila
-                        ),
-                        Container(
-                          height: 15,
-                        ),
-                        //Titulo De Hoja
-                        Container(
-                            width: 122,
-                            child: const Text(
-                              'Regístrate',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black,
-                                fontFamily: 'ProductSans',
-                                fontSize: 25,
-                              ),
-                            )),
-                        //SubTitulo
-                        Container(
-                            child: const Text(
-                          'Solo te tomará unos minutos.',
-                          style: TextStyle(
-                            color: Color.fromARGB(255, 145, 161, 178),
-                            fontFamily: 'Product Sans Bold',
-                            fontSize: 16,
-                          ),
-                        )),
-                        //espacio
-                        Container(
-                          height: 20,
-                        ),
-                        //Titulo de Nombre
-                        Container(
-                            width: 335,
-                            child: const Text(
-                              'Nombre Completo',
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 128, 138, 147),
-                                fontFamily: 'Product Sans Bold',
-                                fontSize: 14,
-                              ),
-                            )),
-                        Container(
-                          height: 5,
-                        ),
-                        buildNombre(
-                          "Escribe tu Nombre",
-                          cntNombre,
-                          TextInputType.text,
-                        ),
-                        Container(
-                          height: 10,
-                        ),
-                        //Titulo de Identificacion
-                        Container(
-                            width: 335,
-                            child: const Text(
-                              'Identificación',
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 128, 138, 147),
-                                fontFamily: 'Product Sans Bold',
-                                fontSize: 14,
-                              ),
-                            )),
-                        Container(
-                          height: 5,
-                        ),
-                        buildIdenti(
-                          "Escribe tu número de identificación",
-                          cntIdent,
-                          TextInputType.number,
-                        ),
-                        Container(
-                          height: 10,
-                        ),
-                        //Titulo de Email
-                        Container(
-                            width: 335,
-                            child: const Text(
-                              'Email',
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 128, 138, 147),
-                                fontFamily: 'Product Sans Bold',
-                                fontSize: 14,
-                              ),
-                            )),
-                        Container(
-                          height: 5,
-                        ),
-                        buildEmail(
-                          "Uname@mail.com",
-                          cntEmail,
-                          TextInputType.emailAddress,
-                        ),
-                        Container(
-                          height: 10,
-                        ),
-                        //Titulo de Contraseña
-                        Container(
-                            width: 335,
-                            child: const Text(
-                              'Contraseña',
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 128, 138, 147),
-                                fontFamily: 'Product Sans Bold',
-                                fontSize: 14,
-                              ),
-                            )),
-                        Container(
-                          height: 5,
-                        ),
-                        buildContra(
-                          "Password",
-                          cntContra,
-                          TextInputType.visiblePassword,
-                        ),
-                        Container(
-                          height: 10,
-                        ),
-                        //Inicio de Validacion de politicas
-                        Row(
-                          children: [
-                            //Checkbox de politicas
-                            Container(
-                                child: Checkbox(
-                              checkColor: Color.fromARGB(255, 208, 213, 221),
-                              activeColor: Color.fromARGB(255, 84, 40, 241),
-                              value: isChecked,
-                              onChanged: (bool? value) {
-                                setState(() {
-                                  isChecked = value!;
-                                });
-                              },
-                            )),
-
-                            // Textro de Politicas de privacidad
-                            Container(
-                                width: 305,
-                                child: const Text(
-                                  'Acepto los Términos y Condiciones y la Política de privacidad de Banca créditos ',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontFamily: 'Product Sans Bold',
-                                    fontSize: 14,
-                                  ),
-                                )),
-                          ],
-                        ),
-                        Container(height: 10),
-                        //Boton para continuar
-                        Container(
-                          margin: const EdgeInsets.only(top: 3.0),
-                          child: ElevatedButton(
-                            onPressed: () {
-                              Navigator.pushNamed(context, '');
-                            },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor:
-                                  const Color.fromARGB(255, 84, 40, 241),
-                              minimumSize: const Size(358, 50),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                            ),
-                            child: const Text(
-                              'Continuar',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                                fontFamily: 'SourceSansPro-Bold',
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(height: 20),
-                        // TextButton(
-                        //   onPressed: () {
-                        //     // Aquí navegas a la pantalla de inicio de sesión
-                        //     Navigator.push(
-                        //       context,
-                        //       MaterialPageRoute(
-                        //           builder: (context) => const VisLogin()),
-                        //     );
-                        //   },
-                        //   child: Text("¿Ya tienes una cuenta? Inicia sesión"),
-                        // ),
-                        RichText(
-                          text: TextSpan(
-                            text:
-                                '¿Ya tienes una cuenta? ', // Texto normal no clicable
-                            style: TextStyle(color: Colors.black, fontSize: 14),
+            SingleChildScrollView(
+                physics:
+                    BouncingScrollPhysics(), // Para un mejor desplazamiento
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+                  child: Form(
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              TextSpan(
-                                text: 'Iniciar sesión', // Parte clicable
-                                style: const TextStyle(
-                                  color: const Color.fromARGB(255, 84, 40, 241),
-                                  //Color para el texto clicable
+                              //Logo
+                              Container(
+                                height: 45,
+                                width: 80,
+                                decoration: const BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage(
+                                        'assets/img/spinner-two.png'),
+                                  ),
                                 ),
-                                recognizer: TapGestureRecognizer()
-                                  ..onTap = () {
-                                    // Aquí navegas a la pantalla de inicio de sesión
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              const VisLogin()),
-                                    );
-                                  },
                               ),
+                              //Nombre de la empresa
+                              Container(
+                                  child: const Text(
+                                'Banca créditos',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontFamily: 'ProductSans',
+                                  fontSize: 28,
+                                ),
+                              )),
+                            ],
+                            //Fin de la fila
+                          ),
+                          Container(
+                            height: 15,
+                          ),
+                          //Titulo De Hoja
+                          Container(
+                              width: 122,
+                              child: const Text(
+                                'Regístrate',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black,
+                                  fontFamily: 'ProductSans',
+                                  fontSize: 25,
+                                ),
+                              )),
+                          //SubTitulo
+                          Container(
+                              child: const Text(
+                            'Solo te tomará unos minutos.',
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 145, 161, 178),
+                              fontFamily: 'Product Sans Bold',
+                              fontSize: 16,
+                            ),
+                          )),
+                          //espacio
+                          Container(
+                            height: 20,
+                          ),
+                          //Titulo de Nombre
+                          Container(
+                              width: 335,
+                              child: const Text(
+                                'Nombre Completo',
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 128, 138, 147),
+                                  fontFamily: 'Product Sans Bold',
+                                  fontSize: 14,
+                                ),
+                              )),
+                          Container(
+                            height: 5,
+                          ),
+                          buildNombre(
+                            "Escribe tu Nombre",
+                            cntNombre,
+                            TextInputType.text,
+                          ),
+                          Container(
+                            height: 10,
+                          ),
+                          //Titulo de Identificacion
+                          Container(
+                              width: 335,
+                              child: const Text(
+                                'Identificación',
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 128, 138, 147),
+                                  fontFamily: 'Product Sans Bold',
+                                  fontSize: 14,
+                                ),
+                              )),
+                          Container(
+                            height: 5,
+                          ),
+                          buildIdenti(
+                            "Escribe tu número de identificación",
+                            cntIdent,
+                            TextInputType.number,
+                          ),
+                          Container(
+                            height: 10,
+                          ),
+                          //Titulo de Email
+                          Container(
+                              width: 335,
+                              child: const Text(
+                                'Email',
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 128, 138, 147),
+                                  fontFamily: 'Product Sans Bold',
+                                  fontSize: 14,
+                                ),
+                              )),
+                          Container(
+                            height: 5,
+                          ),
+                          buildEmail(
+                            "Uname@mail.com",
+                            cntEmail,
+                            TextInputType.emailAddress,
+                          ),
+                          Container(
+                            height: 10,
+                          ),
+                          //Titulo de Contraseña
+                          Container(
+                              width: 335,
+                              child: const Text(
+                                'Contraseña',
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 128, 138, 147),
+                                  fontFamily: 'Product Sans Bold',
+                                  fontSize: 14,
+                                ),
+                              )),
+                          Container(
+                            height: 5,
+                          ),
+                          buildContra(
+                            "Password",
+                            cntContra,
+                            TextInputType.visiblePassword,
+                          ),
+                          Container(
+                            height: 10,
+                          ),
+                          //Inicio de Validacion de politicas
+                          Row(
+                            children: [
+                              //Checkbox de politicas
+                              Container(
+                                  child: Checkbox(
+                                checkColor: Color.fromARGB(255, 208, 213, 221),
+                                activeColor: Color.fromARGB(255, 84, 40, 241),
+                                value: isChecked,
+                                onChanged: (bool? value) {
+                                  setState(() {
+                                    isChecked = value!;
+                                  });
+                                },
+                              )),
+
+                              // Textro de Politicas de privacidad
+                              Container(
+                                  width: 305,
+                                  child: const Text(
+                                    'Acepto los Términos y Condiciones y la Política de privacidad de Banca créditos ',
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontFamily: 'Product Sans Bold',
+                                      fontSize: 14,
+                                    ),
+                                  )),
                             ],
                           ),
-                        ),
-                      ]),
-                ))
+                          Container(height: 10),
+                          //Boton para continuar
+                          Container(
+                            margin: const EdgeInsets.only(top: 3.0),
+                            child: ElevatedButton(
+                              onPressed: () {
+                                Navigator.pushNamed(context, '');
+                              },
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor:
+                                    const Color.fromARGB(255, 84, 40, 241),
+                                minimumSize: const Size(358, 50),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                              ),
+                              child: const Text(
+                                'Continuar',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontFamily: 'SourceSansPro-Bold',
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Container(height: 20),
+                          // TextButton(
+                          //   onPressed: () {
+                          //     // Aquí navegas a la pantalla de inicio de sesión
+                          //     Navigator.push(
+                          //       context,
+                          //       MaterialPageRoute(
+                          //           builder: (context) => const VisLogin()),
+                          //     );
+                          //   },
+                          //   child: Text("¿Ya tienes una cuenta? Inicia sesión"),
+                          // ),
+                          RichText(
+                            text: TextSpan(
+                              text:
+                                  '¿Ya tienes una cuenta? ', // Texto normal no clicable
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 14),
+                              children: [
+                                TextSpan(
+                                  text: 'Iniciar sesión', // Parte clicable
+                                  style: const TextStyle(
+                                    color:
+                                        const Color.fromARGB(255, 84, 40, 241),
+                                    //Color para el texto clicable
+                                  ),
+                                  recognizer: TapGestureRecognizer()
+                                    ..onTap = () {
+                                      // Aquí navegas a la pantalla de inicio de sesión
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const VisLogin()),
+                                      );
+                                    },
+                                ),
+                              ],
+                            ),
+                          ),
+                        ]),
+                  ),
+                )
+                //),
+                )
           ],
         ),
       ),
